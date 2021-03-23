@@ -1,6 +1,6 @@
-from pprint import pprint
 import csv
 import re
+from pprint import pprint
 
 my_raw = "phonebook_raw.csv"
 my_target = "phonebook.csv"
@@ -75,5 +75,7 @@ class PhoneBookProcessor:
 if __name__ == '__main__':
     my_proc = PhoneBookProcessor()
     my_proc.read_raw(my_raw)
-    my_proc.convert_book()
+    res = my_proc.convert_book()
+    pprint(res)
     my_proc.write_result(my_target)
+
