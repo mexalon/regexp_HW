@@ -34,7 +34,8 @@ def merge_clones(my_list: list):
         item = my_list.pop()
         flag = 1
         for ii, entry in enumerate(new_list):
-            if item[0] == entry[0]:
+            if item[0:2] == entry[0:2]:
+                # сортируем клонов по фамилии и имениб так как отчество есть не у всех
                 new_list[ii] = merge_two_lists(entry, item)
                 flag = 0
         if flag:
